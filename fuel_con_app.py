@@ -120,14 +120,15 @@ def main():
 
         # Create a professional-looking scatter plot using Seaborn
         fig, ax = plt.subplots(figsize=(10, 6))
-        sns.scatterplot(data=df, x='ENGINE SIZE', y='COMB (L/100 km)', ax=ax, color='#3498db', s=60)
-        ax.set_title("Engine Size vs Fuel Consumption", fontsize=16)
+        sns.scatterplot(data=df, x='ENGINE SIZE', y='COMB (L/100 km)', ax=ax, color='#3498db', s=60, label="Existing data")
         ax.set_xlabel('Engine Size (L)', fontsize=12)
         ax.set_ylabel('Fuel Consumption (L/100km)', fontsize=12)
+        ax.legend()
        
         # Plot only if prediction exists
         if prediction is not None:
             ax.plot(engine_size, prediction, 'ro', label='Your Car', markersize=7)
+            ax.legend()
         
         st.pyplot(fig)
 
