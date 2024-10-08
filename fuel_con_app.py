@@ -93,7 +93,7 @@ def main():
     col1, col2 = st.columns([2, 3])
 
     with col1:
-        st.markdown("Enter Vehicle Details")
+        st.markdown("<h3 class='subtitle'>Enter Vehicle Details</h3>", unsafe_allow_html=True)
         engine_size = st.slider("Engine Size (L)", min_value=1.0, max_value=10.0, step=0.1, value=1.3)
         cylinders = st.slider("Number of Cylinders", min_value=2, max_value=16, step=1, value=4)
         fuel = st.selectbox("Fuel Type", options=fuel_categories, index=fuel_categories.index('X (Regular Petrol)'))
